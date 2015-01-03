@@ -2,6 +2,7 @@ package mobileofficenet;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
 
 public class Activator implements BundleActivator {
 
@@ -11,20 +12,16 @@ public class Activator implements BundleActivator {
 		return context;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
-	 */
-	public void start(BundleContext bundleContext) throws Exception {
-		Activator.context = bundleContext;
+	private ServiceRegistration registration;
+
+	@Override
+	public void start( BundleContext context ) throws Exception {
+		ExampleService exampleService = new ExampleService();
+		registration = context.registerService( ExampleService.class.getName(), exampleService, null );
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-	 */
-	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.context = null;
+	@Override
+	public void stop( BundleContext context ) throws Exception {
+		registration.unregister();
 	}
-
 }
