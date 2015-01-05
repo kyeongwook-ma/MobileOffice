@@ -111,3 +111,5 @@ HTTP 서비스를 이용하기 위해 Run 혹은 Debug 설정에서 OSGi 실행 
 <img src=http://eclipsesource.com/blogs/wp-content/uploads/2014/02/014-run-in-browser.png><br>
 다음과 같은 실행결과가 나옵니다.
 
+Ref : <i>http://eclipsesource.com/blogs/2014/02/04/step-by-step-how-to-bring-jax-rs-and-osgi-together/</i>
+
