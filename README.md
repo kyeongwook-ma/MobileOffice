@@ -36,25 +36,56 @@ Eclipse 역시 OSGi플랫폼 위에 구동되므로 새로운 타겟 플랫폼�
 
 <h2> 1-3. 소스 코드 작성  </h2>
 
+<b>ExampleResource.java</b>
+
+```java
+/* annotation 을 통해 경로 지정 */
+@Path( "/hello" )
+public class ExampleResource {
+	@GET
+	public String helloWorld() {
+		return "Hello World";
+	}
+}
+```
+
+
+<b>Activator.java</b>
+```java
+public class Activator implements BundleActivator {
+	private ServiceRegistration<ExampleResource> registration;
+
+	public void start(BundleContext bundleContext) throws Exception {
+		/* 서비스 등록 */
+		registration = bundleContext.registerService(ExampleResource.class, new ExampleResource(), null);
+	}
+
+	public void stop(BundleContext bundleContext) throws Exception {
+		registration.unregister();
+	}
+}
+```
+
+
 <h2> 1-4. 실행  </h2>
 
 <img src=http://eclipsesource.com/blogs/wp-content/uploads/2014/02/011-add-launch-bundles.png><br>
 실행을 위해선 다음과 같은 번들들이 필요합니다.
 
-# Our Application
+// Our Application
 osgi.rest.example
 
-# The OSGI implementation
+// The OSGI implementation
 org.eclipse.osgi
 org.eclipse.osgi.services
 
-# The OSGi console
+// The OSGi console
 org.eclipse.equinox.console
 org.apache.felix.gogo.command
 org.apache.felix.gogo.runtime
 org.apache.felix.gogo.shell
 
-# The OSGi HttpService implementation
+// The OSGi HttpService implementation
 org.eclipse.equinox.http.jetty
 org.eclipse.equinox.http.servlet
 org.eclipse.jetty.continuation
@@ -66,10 +97,10 @@ org.eclipse.jetty.servlet
 org.eclipse.jetty.util
 javax.servlet-api
 
-# The JAX-RS Connector
+// The JAX-RS Connector
 com.eclipsesource.jaxrs.publisher
 
-# Jersey
+// Jersey
 com.eclipsesource.jaxrs.jersey-all (this is Jersey repackaged as a single bundle)
 
 <img src=http://eclipsesource.com/blogs/wp-content/uploads/2014/02/012-configure-port.png><br>
