@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mobile_office>
+
+	<block row="0", col="0">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+	</block>
+	
+	<block row="0", col="1">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="0", col="2">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="0", col="3">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="1", col="0">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="1", col="1">
+
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+	</block>
+
+	<block row="1", col="2">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+	
+	<block row="1", col="3">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="2", col="0">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="2", col="1">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="2", col="2">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="2", col="3">
+
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+	</block>
+
+	<block row="3", col="0">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+	</block>
+
+	<block row="3", col="1">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+	</block>
+
+	<block row="3", col="2">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+	<block row="3", col="3">
+		<brightness></brightness>
+		<has_window></has_window>
+		<is_occupied></is_occupied>
+		<temperatue></temperatue>
+		<humidity></humidity>
+		<has_partition></has_partition>
+
+
+	</block>
+
+
+</mobile_office>
