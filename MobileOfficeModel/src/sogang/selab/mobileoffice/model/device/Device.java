@@ -9,7 +9,11 @@ public abstract class Device implements ISensing {
 	protected double discountRate;
 	protected double cost;
 	
-	protected void incrementCost(double cost) {
+	public Device(int xPos, int yPos) {
+		this.xPos = xPos;
+		this.yPos = yPos;
+	}
+	void incrementCost(double cost) {
 		this.cost += cost;
 	}
 	
@@ -17,14 +21,11 @@ public abstract class Device implements ISensing {
 		return cost;
 	}
 	
-	public Device(int xPos, int yPos) {
-		this.xPos = xPos;
-		this.yPos = yPos;
-		MobileOffice.getBlock(xPos, yPos).addDevice(this);
+	public int[] getPosition() {
+		return new int[] { xPos, yPos };
 	}
 	
-	
-	protected int distance(int srcX, int srcY, int dstX, int dstY) {
+	int distance(int srcX, int srcY, int dstX, int dstY) {
 		return java.lang.Math.max(
 				java.lang.Math.abs(srcX - dstX), 
 				java.lang.Math.abs(srcY - dstY));

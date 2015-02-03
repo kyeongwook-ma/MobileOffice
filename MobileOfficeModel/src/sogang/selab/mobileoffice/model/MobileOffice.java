@@ -1,6 +1,7 @@
 package sogang.selab.mobileoffice.model;
 
 import sogang.selab.mobileoffice.model.convertor.IJsonConvertor;
+import sogang.selab.mobileoffice.model.device.Device;
 
 public class MobileOffice implements IJsonConvertor {
 
@@ -41,6 +42,11 @@ public class MobileOffice implements IJsonConvertor {
 	
 	public static OfficeBlock getBlock(int xPos, int yPos) {
 		return instance.blocks[xPos][yPos];
+	}
+	
+	public static void addDevice(Device d) {
+		int pos[] = d.getPosition();
+		instance.blocks[pos[0]][pos[1]].addDevice(d);
 	}
 	
 	public static void setBlock(int xPos, int yPos, OfficeBlock block) {

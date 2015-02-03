@@ -26,11 +26,11 @@ public class OfficeBlock implements IJsonConvertor {
 		this.env = env;
 	}
 
-	public void addDevice(Device device) {
+	void addDevice(Device device) {
 		devices.add(device);
 	}
 
-	public void removeDevice(Device device) {
+	void removeDevice(Device device) {
 		devices.remove(device);
 	}
 

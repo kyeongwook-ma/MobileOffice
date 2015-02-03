@@ -5,6 +5,7 @@ import sogang.selab.mobileoffice.model.MobileOffice;
 
 public class AirCon extends Device {
 
+
 	public AirCon(int xPos, int yPos) {
 		super(xPos, yPos);
 	}
