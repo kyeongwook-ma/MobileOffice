@@ -8,15 +8,11 @@ public class Environment {
 	public int getRow() {
 		return row;
 	}
-	public void setRow(int row) {
-		this.row = row;
-	}
+	
 	public int getCol() {
 		return col;
 	}
-	public void setCol(int col) {
-		this.col = col;
-	}
+	
 	public boolean isOccupied() {
 		return isOccupied;
 	}
@@ -35,17 +31,26 @@ public class Environment {
 	public void setTemperature(double temperature) {
 		this.temperature = temperature;
 	}
+	public void changeTemperature(double temperature) {
+		this.temperature += temperature;
+	}
 	public double getHumidity() {
 		return humidity;
 	}
 	public void setHumidity(double humidity) {
 		this.humidity = humidity;
 	}
+	public void changeHumidity(double humidity) {
+		this.humidity += humidity;
+	}
 	public double getBrightness() {
 		return brightness;
 	}
 	public void setBrightness(double brightness) {
 		this.brightness = brightness;
+	}
+	public void changeBrighteness(double brightness) {
+		this.brightness += brightness;
 	}
 	
 }
