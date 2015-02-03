@@ -18,7 +18,7 @@ public class MobileOffice implements IJsonConvertor {
 		this.col = col;
 	}
 	
-	public static MobileOffice createMobileOffice(int row, int col) {
+	public static MobileOffice createOfficeBlock(int row, int col) {
 		if(instance == null) {
 			instance = new MobileOffice(row, col);
 			return instance;
@@ -26,6 +26,20 @@ public class MobileOffice implements IJsonConvertor {
 			return instance;
 		}
 	}
+
+	public static OfficeBlock getBlock(int xPos, int yPos) {
+		return instance.blocks[xPos][yPos];
+	}
+	
+	public static void addDevice(Device d) {
+		int pos[] = d.getPosition();
+		instance.blocks[pos[0]][pos[1]].addDevice(d);
+	}
+	
+	public static void assignBlock(int xPos, int yPos, OfficeBlock block) {
+		instance.blocks[xPos][yPos] = block;
+	}
+	
 
 	@Override
 	public String getJson() {
@@ -40,18 +54,7 @@ public class MobileOffice implements IJsonConvertor {
 		return sb.toString();
 	}
 	
-	public static OfficeBlock getBlock(int xPos, int yPos) {
-		return instance.blocks[xPos][yPos];
+	public static void printCurrentState() {
+		
 	}
-	
-	public static void addDevice(Device d) {
-		int pos[] = d.getPosition();
-		instance.blocks[pos[0]][pos[1]].addDevice(d);
-	}
-	
-	public static void setBlock(int xPos, int yPos, OfficeBlock block) {
-		instance.blocks[xPos][yPos] = block;
-	}
-	
-	
 }

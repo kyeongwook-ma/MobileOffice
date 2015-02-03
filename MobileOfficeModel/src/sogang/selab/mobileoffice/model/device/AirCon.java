@@ -19,7 +19,7 @@ public class AirCon extends Device {
 	private final double COOLING_PERF = 0.6;
 
 
-	public void dehumidify() {
+	public void dehumidify(int duration) {
 		incrementCost(DEHUMIDIFY_COST);
 		for(int i=0; i<this.length; i++) {
 			for(int j=0; j<this.breadth; j++) {	
@@ -31,7 +31,7 @@ public class AirCon extends Device {
 		}
 	}
 
-	public void warm() {
+	public void warm(int duration) {
 		incrementCost(WARM_COST);
 		for(int i=0; i<this.length; i++) {
 			for(int j=0; j<this.breadth; j++) {	
@@ -43,7 +43,7 @@ public class AirCon extends Device {
 		}
 	}
 
-	public void cool() {
+	public void cool(int duration) {
 		incrementCost(COOL_COST);
 		for(int i=0; i<this.length; i++) {
 			for(int j=0; j<this.breadth; j++) {	

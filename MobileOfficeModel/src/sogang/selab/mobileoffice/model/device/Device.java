@@ -1,6 +1,5 @@
 package sogang.selab.mobileoffice.model.device;
 
-import sogang.selab.mobileoffice.model.MobileOffice;
 
 
 public abstract class Device implements ISensing {
