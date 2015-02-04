@@ -8,6 +8,7 @@ public abstract class Device implements ISensing {
 	protected double discountRate;
 	protected double cost;
 	
+	
 	public Device(int xPos, int yPos) {
 		this.xPos = xPos;
 		this.yPos = yPos;
@@ -29,5 +30,6 @@ public abstract class Device implements ISensing {
 				java.lang.Math.abs(srcX - dstX), 
 				java.lang.Math.abs(srcY - dstY));
 	}
+	
 	
 }
