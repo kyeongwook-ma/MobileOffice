@@ -55,10 +55,4 @@ public class AirCon extends Device {
 
 	}
 
-	@Override
-	public void notifyChange(int elapsedTime) {
-
-	}
-
-
 }

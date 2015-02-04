@@ -2,7 +2,7 @@ package sogang.selab.mobileoffice.model.device;
 
 
 
-public abstract class Device implements ISensing {
+public abstract class Device {
 	protected int xPos, yPos, length, breadth;
 	protected double performance;
 	protected double discountRate;

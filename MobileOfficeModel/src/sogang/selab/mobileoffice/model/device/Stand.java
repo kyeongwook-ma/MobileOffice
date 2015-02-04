@@ -37,9 +37,5 @@ public class Stand extends Device {
 			}
 		}	
 	}
-	@Override
-	public void notifyChange(int elapsedTime) {
-		// TODO Auto-generated method stub
 
-	}
 }

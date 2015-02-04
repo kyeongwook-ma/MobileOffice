@@ -40,9 +40,5 @@ public class Light extends Device {
 	}
 	
 
-	@Override
-	public void notifyChange(int elapsedTime) {
-
-	}
 
 }
