@@ -3,16 +3,17 @@ package sogang.selab.mobileoffice.model.device;
 
 
 public abstract class Device {
+	
 	protected int xPos, yPos, length, breadth;
 	protected double performance;
 	protected double discountRate;
 	protected double cost;
 	
-	
 	public Device(int xPos, int yPos) {
 		this.xPos = xPos;
 		this.yPos = yPos;
 	}
+	
 	void incrementCost(double cost) {
 		this.cost += cost;
 	}
@@ -31,5 +32,9 @@ public abstract class Device {
 				java.lang.Math.abs(srcY - dstY));
 	}
 	
+	@Override
+	public String toString() {
+		return getClass().getSimpleName();
+	}
 	
 }

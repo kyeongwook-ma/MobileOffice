@@ -3,9 +3,7 @@ package sogang.selab.mobileoffice.model;
 import java.util.ArrayList;
 
 import sogang.selab.mobileoffice.model.convertor.IJsonConvertor;
-import sogang.selab.mobileoffice.model.device.AirCon;
 import sogang.selab.mobileoffice.model.device.Device;
-import sogang.selab.mobileoffice.model.device.ISensing;
 
 import com.google.gson.Gson;
 
@@ -13,9 +11,20 @@ public class OfficeBlock implements IJsonConvertor {
 
 	private Environment env;
 	private ArrayList<Device> devices = new ArrayList<Device>();
+	private int xPos, yPos;
 
-	private OfficeBlock( Environment env) {
+	private OfficeBlock(int xPos, int yPos, Environment env) {
+		this.xPos = xPos;
+		this.yPos = yPos;
 		this.env = env;
+	}
+	
+	public int x() {
+		return xPos;
+	}
+	
+	public int y() {
+		return yPos;
 	}
 
 	public Environment env() {
@@ -45,11 +54,22 @@ public class OfficeBlock implements IJsonConvertor {
 	public static class OfficeBlockBuilder {
 
 		private Environment env;
-
+		private int xPos, yPos;
+	
 		public OfficeBlockBuilder() {
 			this.env = new Environment();
 		}
 
+		public OfficeBlockBuilder xPos(int xPos) {
+			this.xPos = xPos;
+			return this;
+		}
+		
+		public OfficeBlockBuilder yPos(int yPos) {
+			this.yPos = yPos;
+			return this;
+		}
+		
 		public OfficeBlockBuilder temperature(double temperature) {
 			this.env.setTemperature(temperature);
 			return this;
@@ -76,11 +96,25 @@ public class OfficeBlock implements IJsonConvertor {
 		}
 
 		public OfficeBlock createOfficeBlock() {
-			return new OfficeBlock(this.env);
+			return new OfficeBlock(this.xPos, this.yPos, this.env);
 		}
 	}
 
-
+	@Override
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append(env.toString());
+		
+		sb.append("devices : \n");
+		for(Device d : devices) {
+			sb.append(d.toString());
+		}
+		
+		return sb.toString();
+	}
+	
 	@Override
 	public String getJson() {
 		return new Gson().toJson(this);

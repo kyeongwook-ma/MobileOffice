@@ -1,5 +1,7 @@
 package sogang.selab.mobileoffice.model;
 
+import com.google.gson.Gson;
+
 import sogang.selab.mobileoffice.model.convertor.IJsonConvertor;
 import sogang.selab.mobileoffice.model.device.Device;
 
@@ -36,25 +38,33 @@ public class MobileOffice implements IJsonConvertor {
 		instance.blocks[pos[0]][pos[1]].addDevice(d);
 	}
 	
-	public static void assignBlock(int xPos, int yPos, OfficeBlock block) {
+	public static void assignBlock(OfficeBlock block) {
+		int xPos = block.x();
+		int yPos = block.y();
 		instance.blocks[xPos][yPos] = block;
 	}
 	
 
 	@Override
 	public String getJson() {
-		StringBuilder sb = new StringBuilder();
-		
-		for(int i = 0; i < row; ++i) {
-			for(int j = 0; j < col; ++j) {
-				sb.append(blocks[i][j].getJson());
-			}
-		}
-
-		return sb.toString();
+		return new Gson().toJson(this);
+	}
+	
+	public static String getSerializedJson() {
+		return instance.getJson();
 	}
 	
 	public static void printCurrentState() {
-		
+		for(int i = 0; i < instance.row; ++i) {
+			System.out.println();
+			for(int j = 0; j < instance.col; ++j) {
+				
+				OfficeBlock block = instance.blocks[i][j];
+				
+				if(block != null)
+					System.out.print(block);
+			}
+		}
+
 	}
 }

@@ -1,16 +1,21 @@
 package sogang.selab.mobileoffice.model;
 
 public class Environment {
-	private int row, col;
 	private boolean isOccupied, hasWindow;
 	private double temperature, humidity, brightness;
 	
-	public int getRow() {
-		return row;
-	}
-	
-	public int getCol() {
-		return col;
+	@Override
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("temperature :"  + temperature + "\n");
+		sb.append("humidity : " + humidity + "\n");
+		sb.append("brightness : " + brightness + "\n");
+		sb.append("is occupied : " + isOccupied + "\n");
+		sb.append("has window : " + hasWindow + "\n");
+		
+		return sb.toString();
 	}
 	
 	public boolean isOccupied() {
@@ -49,7 +54,7 @@ public class Environment {
 	public void setBrightness(double brightness) {
 		this.brightness = brightness;
 	}
-	public void changeBrighteness(double brightness) {
+	public void changeBrightness(double brightness) {
 		this.brightness += brightness;
 	}
 	

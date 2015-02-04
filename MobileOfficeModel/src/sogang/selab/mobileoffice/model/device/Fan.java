@@ -32,7 +32,7 @@ public class Fan extends Device {
 			for(int j=0; j<this.breadth; j++) {	
 				int dist = distance(xPos, yPos, i, j);
 				Environment env = MobileOffice.getBlock(i, j).env();
-				env.changeBrighteness(((OFF_TEMP_PERF - dist) * discountRate));
+				env.changeBrightness(((OFF_TEMP_PERF - dist) * discountRate));
 			}
 		}	
 	}

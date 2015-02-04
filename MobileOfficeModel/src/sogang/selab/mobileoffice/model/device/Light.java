@@ -22,7 +22,7 @@ public class Light extends Device {
 				int dist = distance(xPos, yPos, i, j);
 				Environment env = MobileOffice.getBlock(i, j).env();
 				env.changeTemperature(((ON_TEMP_PERF - dist) * discountRate) * duration);
-				env.changeBrighteness(((ON_BRIGHT_PERF - dist) * discountRate) * duration);
+				env.changeBrightness(((ON_BRIGHT_PERF - dist) * discountRate) * duration);
 			}
 		}	
 		
@@ -34,7 +34,7 @@ public class Light extends Device {
 			for(int j=0; j<this.breadth; j++) {	
 				int dist = distance(xPos, yPos, i, j);
 				Environment env = MobileOffice.getBlock(i, j).env();
-				env.changeBrighteness(-1 * ((OFF_BRIGHT_PERF - dist) * discountRate));
+				env.changeBrightness(-1 * ((OFF_BRIGHT_PERF - dist) * discountRate));
 			}
 		}	
 	}

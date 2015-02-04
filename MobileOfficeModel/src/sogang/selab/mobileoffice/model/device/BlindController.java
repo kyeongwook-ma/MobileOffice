@@ -21,7 +21,7 @@ public class BlindController extends Device {
 				int dist = distance(xPos, yPos, i, j);
 				Environment env = MobileOffice.getBlock(i, j).env();
 				env.changeTemperature(((UP_TEMP_PERF - dist) * discountRate) * duration);
-				env.changeBrighteness(((UP_BRIGHT_PERF - dist) * discountRate) * duration);
+				env.changeBrightness(((UP_BRIGHT_PERF - dist) * discountRate) * duration);
 
 			}
 		}	
@@ -38,7 +38,7 @@ public class BlindController extends Device {
 			for(int j=0; j<this.breadth; j++) {	
 				int dist = distance(xPos, yPos, i, j);
 				Environment env = MobileOffice.getBlock(i, j).env();
-				env.changeBrighteness(-1 * ((DOWN_TEMP_PERF - dist) * discountRate));
+				env.changeBrightness(-1 * ((DOWN_TEMP_PERF - dist) * discountRate));
 			}
 		}	
 	}

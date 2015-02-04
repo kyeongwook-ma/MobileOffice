@@ -8,19 +8,21 @@ public class MobileOfficeSimulator {
 
 	public static void main(String[] args) {
 		
-		MobileOffice.printCurrentState();
 
 		/* create mobile office block 4 by 4 */
 		MobileOffice.createOfficeBlock(4, 4);
 		
 		/* instantiate with environment */
 		OfficeBlock block = new OfficeBlockBuilder()
+				.xPos(0).yPos(0)
 				.brightness(60)
 				.humidity(55)
 				.temperature(25)
 				.createOfficeBlock();
 	
-		MobileOffice.assignBlock(0, 0, block);
+		MobileOffice.assignBlock(block);
+		
+		MobileOffice.printCurrentState();
 	
 		/* instantiate device & assign to mobile office */
 		AirCon aircon = new AirCon(0 , 0);
@@ -30,6 +32,8 @@ public class MobileOfficeSimulator {
 		aircon.cool(3);
 	
 		MobileOffice.printCurrentState();
+		
+		System.out.println(MobileOffice.getSerializedJson());
 	}
 
 }
