@@ -3,6 +3,47 @@ MobileOffice
 
 ExoBrain 프로젝트
 
+<h1> 모델 라이브러리 소스 코드 예제 </h1>
+
+
+```java
+public class MobileOfficeSimulator {
+
+	public static void main(String[] args) {
+		
+
+		/* create mobile office block 4 by 4 */
+		MobileOffice.createOfficeBlock(4, 4);
+		
+		/* instantiate with environment */
+		OfficeBlock block = new OfficeBlockBuilder()
+				.xPos(0).yPos(0)
+				.brightness(60)
+				.humidity(55)
+				.temperature(25)
+				.createOfficeBlock();
+	
+		MobileOffice.assignBlock(block);
+		
+		MobileOffice.printCurrentState();
+	
+		/* instantiate device & assign to mobile office */
+		AirCon aircon = new AirCon(0 , 0);
+		MobileOffice.addDevice(aircon);
+		
+		/* operate device in duration time */
+		aircon.cool(3);
+	
+		MobileOffice.printCurrentState();
+		
+		System.out.println(MobileOffice.getSerializedJson());
+	}
+}
+
+```
+
+
+
 <h1> 통신 기법 : OSGi HTTP Rest </h1>
 
 <h2> 1-1. 새 개발환경 설정 </h2>
