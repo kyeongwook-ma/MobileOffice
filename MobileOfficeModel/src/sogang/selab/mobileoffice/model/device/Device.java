@@ -1,5 +1,7 @@
 package sogang.selab.mobileoffice.model.device;
 
+import sogang.selab.mobileoffice.model.MobileOffice;
+
 
 
 public abstract class Device {
@@ -12,6 +14,14 @@ public abstract class Device {
 	public Device(int xPos, int yPos) {
 		this.xPos = xPos;
 		this.yPos = yPos;
+		
+		if(xPos > MobileOffice.row() || yPos > MobileOffice.col()) {
+			try {
+				throw new Exception("out of office row or col");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	void incrementCost(double cost) {

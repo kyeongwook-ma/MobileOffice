@@ -14,15 +14,24 @@ public class OfficeBlock implements IJsonConvertor {
 	private int xPos, yPos;
 
 	private OfficeBlock(int xPos, int yPos, Environment env) {
-		this.xPos = xPos;
-		this.yPos = yPos;
-		this.env = env;
+
+		try {
+			this.xPos = xPos;
+			this.yPos = yPos;
+			this.env = env;
+
+			if(xPos > MobileOffice.row() || yPos > MobileOffice.col()) {
+				throw new Exception("out of office row or col");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	public int x() {
 		return xPos;
 	}
-	
+
 	public int y() {
 		return yPos;
 	}
@@ -55,7 +64,7 @@ public class OfficeBlock implements IJsonConvertor {
 
 		private Environment env;
 		private int xPos, yPos;
-	
+
 		public OfficeBlockBuilder() {
 			this.env = new Environment();
 		}
@@ -64,12 +73,12 @@ public class OfficeBlock implements IJsonConvertor {
 			this.xPos = xPos;
 			return this;
 		}
-		
+
 		public OfficeBlockBuilder yPos(int yPos) {
 			this.yPos = yPos;
 			return this;
 		}
-		
+
 		public OfficeBlockBuilder temperature(double temperature) {
 			this.env.setTemperature(temperature);
 			return this;
@@ -102,19 +111,19 @@ public class OfficeBlock implements IJsonConvertor {
 
 	@Override
 	public String toString() {
-		
+
 		StringBuilder sb = new StringBuilder();
-		
+
 		sb.append(env.toString());
-		
+
 		sb.append("devices : \n");
 		for(Device d : devices) {
 			sb.append(d.toString());
 		}
-		
+
 		return sb.toString();
 	}
-	
+
 	@Override
 	public String getJson() {
 		return new Gson().toJson(this);
