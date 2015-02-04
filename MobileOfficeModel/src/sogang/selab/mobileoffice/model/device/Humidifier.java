@@ -7,7 +7,6 @@ public class Humidifier extends Device {
 
 	public Humidifier(int xPos, int yPos) {
 		super(xPos, yPos);
-		// TODO Auto-generated constructor stub
 	}
 	public void on(int duration) {
 
@@ -19,7 +18,7 @@ public class Humidifier extends Device {
 			for(int j=0; j<this.breadth; j++) {	
 				int dist = distance(xPos, yPos, i, j);
 				Environment env = MobileOffice.getBlock(i, j).env();
-				env.changeTemperature(((ON_HUMID_PERF - dist) * discountRate) * duration);
+				env.changeHumidity(((ON_HUMID_PERF - dist) * discountRate) * duration);
 			}
 		}	
 
